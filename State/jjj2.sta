@@ -1,0 +1,11 @@
+﻿[NWA State]
+SaveType=4
+SaveTypeSelect=4
+
+[Channel0]
+FrequencyStart=20000
+
+[Channel0\Trace0]
+RPort=1
+SPort=1
+
