@@ -5,15 +5,15 @@ from math import pi
 
 def grouping(n1,na,edad,lado):
     M1 = [] #columnas(señales con tumor) agrupadas
-    if lado == 'Izquierdo':
+    if lado == 'izquierda':
         Pos = 'A'
         L = 'Izq'
-    elif lado == 'Derecho':
+    elif lado == 'derecha':
         Pos = 'B'
         L = 'Der'
     for i in range(1,na+1):
         for j in range(1,na+1):
-            name_file = 'datos/' + 'resultsSOLT'+Pos+ '_p'+ str(i) + '_' + str(j)+ '.csv' ##definiendo archivo de lectura
+            name_file = 'datos/'+'resultsSOLT'+Pos+ '_p'+ str(i) + '_' + str(j)+ '.csv' ##definiendo archivo de lectura
             v=pd.read_csv(name_file,header = 0)##Leyendo csv de file vacio
             vm=v.iloc[:,0].values #mag
             vp=v.iloc[:,1].values #fase
@@ -32,7 +32,7 @@ def grouping(n1,na,edad,lado):
     rows=np.shape(M1)[0]
     cols=np.shape(M1)[1]
     
-    M1.to_csv(n1+edad+'_agrupado.csv'+L,index=False,header=False) #guardando archivos S y Freq
+    M1.to_csv(n1+edad+L+'_agrupado.csv',index=False,header=False) #guardando archivos S y Freq
     #f1.to_csv('Frequency_range_'+str(len(vm))+'.csv',index=False, header=False)
     
     M1=M1.to_numpy().astype(complex) 

@@ -35,7 +35,7 @@ def compute_barrido(lado):
     print('comunicacion con el arduino ')
     time.sleep(2)
 
-    if lado == "Izquierdo":
+    if lado == "izquierda":
         #Lado B
         count = 1
         
@@ -45,9 +45,9 @@ def compute_barrido(lado):
                 ############
                 print(i,j)
 
-                time.sleep(1)
+                time.sleep(3)
                 ser.write(str(count).encode())  
-                time.sleep(1)  
+                time.sleep(3)  
                 #carga calibracion  
                 CMT.write_ascii_values('MMEM:LOAD "A_1g_8g_10k_p'+str(i)+'_'+str(j)+'"\n',values) #Cargar la calibracion depende del puerto
                 print('inicio del barrido S'+str(i)+'-'+str(j))
@@ -61,7 +61,7 @@ def compute_barrido(lado):
                 ############
                 count +=1
 
-    elif lado == "Derecho":
+    elif lado == "derecha":
         #Lado a
      
         count = 257
